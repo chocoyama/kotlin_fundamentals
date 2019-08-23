@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">KotlinFundamental</string>
     <string name="roll_label">Roll</string>
+    <string name="dice_image_content_description">This is dice Image</string>
 </resources>

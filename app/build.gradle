@@ -5,14 +5,16 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
+    // アプリのコンパイルに使用するAndroidAPIレベル（アプリがサポートできるAndroidの最新バージョン）
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.example.android.kotlin_fundamental"
-        minSdkVersion 21
-        targetSdkVersion 28
+        minSdkVersion 21 // アプリを実行する最も古いバージョン
+        targetSdkVersion 28 // アプリをテストした最新バージョン（基本的にはcompileSdkVersionと同じになる）
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
     }
     buildTypes {
         release {
