@@ -1,4 +1,4 @@
-package com.example.android.kotlin_fundamental
+package activity
 
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
@@ -7,7 +7,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
-import kotlinx.android.synthetic.main.activity_color_my_views.*
+import com.example.android.kotlin_fundamental.R
 
 class ColorMyViewsActivity : AppCompatActivity() {
     private lateinit var boxOneText: TextView
@@ -53,9 +53,15 @@ class ColorMyViewsActivity : AppCompatActivity() {
             R.id.box_three_text -> view.setBackgroundColor(Color.BLUE)
             R.id.box_four_text -> view.setBackgroundColor(Color.MAGENTA)
             R.id.box_five_text -> view.setBackgroundColor(Color.BLUE)
-            R.id.red_button -> boxThreeText.setBackgroundResource(R.color.my_red)
-            R.id.yellow_buttton-> boxFourText.setBackgroundResource(R.color.my_yellow)
-            R.id.green_button -> boxFiveText.setBackgroundResource(R.color.my_green)
+            R.id.red_button -> boxThreeText.setBackgroundResource(
+                R.color.my_red
+            )
+            R.id.yellow_buttton -> boxFourText.setBackgroundResource(
+                R.color.my_yellow
+            )
+            R.id.green_button -> boxFiveText.setBackgroundResource(
+                R.color.my_green
+            )
             else -> view.setBackgroundColor(Color.LTGRAY)
         }
     }

@@ -1,10 +1,10 @@
-package com.example.android.kotlin_fundamental
+package activity
 
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.android.kotlin_fundamental.R
 import java.util.*
 
 // MEMO: AppCompatActivityは後方互換性も考慮した上で全ての最新機能を利用できるようにするために用いる

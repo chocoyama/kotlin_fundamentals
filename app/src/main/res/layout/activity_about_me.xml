@@ -1,21 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".AboutMeActivity">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="myName"
+            type="entity.MyName" />
+    </data>
 
     <!-- Androidではpaddingとmargin属性がある -->
     <!--   新しいOSバージョンであれば、start, endを使うことで水平方向の指定を行うが、 -->
     <!--   古いOSバージョンの場合はleft, rightで指定していたので、start, endに追加でそれらの属性を指定することが必要になる -->
     <!-- またそれらの値もresourceファイルで管理することができ、dimensファイルの指定を `@dimen` で参照可能  -->
-    <LinearLayout
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:paddingStart="@dimen/layout_padding"
         android:paddingEnd="@dimen/layout_padding"
+        tools:context="activity.AboutMeActivity"
         tools:layout_editor_absoluteX="243dp"
         tools:layout_editor_absoluteY="271dp">
 
@@ -26,7 +29,7 @@
             style="@style/NameStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/name"
+            android:text="@{myName.name}"
             android:textAlignment="center" />
 
         <EditText
@@ -57,7 +60,8 @@
             android:paddingTop="@dimen/small_padding"
             android:paddingBottom="@dimen/small_padding"
             android:textAlignment="center"
-            android:visibility="gone" />
+            android:visibility="gone"
+            android:text="@{myName.nickname}"/>
 
         <ImageView
             android:id="@+id/star_image"
@@ -81,4 +85,4 @@
                 android:text="@string/bio" />
         </ScrollView>
     </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
