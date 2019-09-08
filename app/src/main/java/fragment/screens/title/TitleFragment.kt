@@ -1,5 +1,5 @@
 /*
- * Copyright 2018, The Android Open Source Project
+ * Copyright (C) 2019 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,19 +14,32 @@
  * limitations under the License.
  */
 
-package fragment
+package fragment.screens.title
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.android.kotlin_fundamental.R
+import com.example.android.kotlin_fundamental.databinding.TitleFragmentBinding
 
-class RulesFragment : Fragment() {
+/**
+ * Fragment for the starting or title screen of the app
+ */
+class TitleFragment : Fragment() {
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+                              savedInstanceState: Bundle?): View {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_rules, container, false)
+        val binding: TitleFragmentBinding = DataBindingUtil.inflate(
+                inflater, R.layout.title_fragment, container, false)
+
+        binding.playGameButton.setOnClickListener {
+            findNavController().navigate(TitleFragmentDirections.actionTitleToGame())
+        }
+        return binding.root
     }
 }

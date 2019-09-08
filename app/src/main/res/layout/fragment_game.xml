@@ -23,7 +23,7 @@
 
         <variable
             name="game"
-            type="fragment.GameFragment" />
+            type="fragment.trivia.GameFragment" />
     </data>
 
     <ScrollView

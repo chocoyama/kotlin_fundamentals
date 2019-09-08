@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package fragment
+package fragment.trivia
 
 import android.content.Intent
 import android.os.Bundle
@@ -25,7 +25,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.example.android.kotlin_fundamental.R
 import com.example.android.kotlin_fundamental.databinding.FragmentGameWonBinding
-
 
 class GameWonFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
