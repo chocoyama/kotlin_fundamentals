@@ -10,14 +10,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="activity.DessertClickerActivity"></activity>
-        <activity android:name="activity.TriviaActivity">
+        <activity android:name="activity.DessertClickerActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="activity.TriviaActivity"></activity>
         <activity android:name="activity.ColorMyViewsActivity"></activity>
         <activity android:name="activity.AboutMeActivity"></activity>
         <activity android:name="activity.MainActivity"></activity>
