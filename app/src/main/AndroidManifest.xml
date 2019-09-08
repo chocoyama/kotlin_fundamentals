@@ -3,12 +3,14 @@
     package="com.example.android.kotlin_fundamental">
 
     <application
+        android:name=".KotlinApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name="activity.DessertClickerActivity"></activity>
         <activity android:name="activity.TriviaActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -16,9 +18,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="activity.ColorMyViewsActivity" />
-        <activity android:name="activity.AboutMeActivity" />
-        <activity android:name="activity.MainActivity" />
+        <activity android:name="activity.ColorMyViewsActivity"></activity>
+        <activity android:name="activity.AboutMeActivity"></activity>
+        <activity android:name="activity.MainActivity"></activity>
 
         <meta-data
             android:name="preloaded_fonts"
