@@ -76,7 +76,7 @@ class GameFragment : Fragment() {
             )
         ),
         Question(
-            text = "Which one of these is an Android navigation component?",
+            text = "Which one of these is an Android trivia_navigation component?",
             answers = listOf("NavController", "NavCentral", "NavMaster", "NavSwitcher")
         ),
         Question(

@@ -1,40 +1,53 @@
+/*
+ * Copyright 2019, The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package activity
 
 import android.os.Bundle
-import android.widget.Button
-import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.android.kotlin_fundamental.R
-import java.util.*
 
-// MEMO: AppCompatActivityは後方互換性も考慮した上で全ての最新機能を利用できるようにするために用いる
+
+/**
+ * This is the toy app for lesson 6 of the
+ * Android App Development in Kotlin course on Udacity(https://www.udacity.com/course/???).
+ *
+ * The SleepQualityTracker app is a demo app that helps you collect information about your sleep.
+ * - Start time, end time, quality, and time slept
+ *
+ * This app demonstrates the following views and techniques:
+ * - Room database, DAO, and Coroutines
+ *
+ * It also uses and builds on the following techniques from previous lessons:
+ * - Transformation map
+ * - Data Binding in XML files
+ * - ViewModel Factory
+ * - Using Backing Properties to protect MutableLiveData
+ * - Observable state LiveData variables to trigger navigation
+ */
+
+/**
+ * This main activity is just a container for our fragments,
+ * where the real action is.
+ */
 class MainActivity : AppCompatActivity() {
-
-    private lateinit var diceImage: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // MEMO: LayoutInflationはXMLファイルをViewObjectに変換するための処理
+
         setContentView(R.layout.activity_main)
-
-        // findViewByIdは重たい操作
-        diceImage = findViewById(R.id.dice_image)
-
-        val rollButton: Button = findViewById(R.id.roll_button)
-        rollButton.setOnClickListener { rollDice() }
-    }
-
-    private fun rollDice() {
-        val randomInt = Random().nextInt(6) + 1
-
-        val drawableResource = when(randomInt) {
-            1 -> R.drawable.dice_1
-            2 -> R.drawable.dice_2
-            3 -> R.drawable.dice_3
-            4 -> R.drawable.dice_4
-            5 -> R.drawable.dice_5
-            else -> R.drawable.dice_6
-        }
-        diceImage.setImageResource(drawableResource)
     }
 }
