@@ -15,20 +15,13 @@
  *
  */
 
-package activity
+package fragment.network
 
-import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-import com.example.android.kotlin_fundamental.R
+import com.squareup.moshi.Json
 
-class MainActivity : AppCompatActivity() {
-
-    /**
-     * Our MainActivity is only responsible for setting the content view that contains the
-     * Navigation Host.
-     */
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-    }
-}
+class MarsProperty(
+    val id: String,
+    @Json(name = "img_src") val imgSrcUrl: String,
+    val type: String,
+    val price: Double
+)
