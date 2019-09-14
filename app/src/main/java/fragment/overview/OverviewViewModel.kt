@@ -36,12 +36,15 @@ import java.lang.Exception
  */
 class OverviewViewModel : ViewModel() {
 
-    // The internal MutableLiveData String that stores the most recent response
-    private val _response = MutableLiveData<String>()
+    enum class MarsApiStatus { LOADING, ERROR, DONE }
 
-    // The external immutable LiveData for the response String
-    val response: LiveData<String>
-        get() = _response
+    private val _status = MutableLiveData<MarsApiStatus>()
+    val status: LiveData<MarsApiStatus>
+        get() = _status
+
+    private val _properties = MutableLiveData<List<MarsProperty>>()
+    val properties: LiveData<List<MarsProperty>>
+        get() = _properties
 
     private var viewModelJob = Job()
     private val coroutineScope = CoroutineScope(viewModelJob + Dispatchers.Main)
@@ -64,10 +67,15 @@ class OverviewViewModel : ViewModel() {
     private fun getMarsRealEstateProperties() {
         coroutineScope.launch {
             try {
+                _status.value = MarsApiStatus.LOADING
                 val response = MarsApi.retrofitService.getProperties()
-                _response.value = "Success: ${response.body()?.size} Mars property retrieved"
+                _status.value = MarsApiStatus.DONE
+                response.body()?.let {
+                    if (it.isNotEmpty()) _properties.value = it
+                }
             } catch (e: Exception) {
-                _response.value = "Failure: " + e.message
+                _status.value = MarsApiStatus.ERROR
+                _properties.value = ArrayList()
             }
         }
     }
