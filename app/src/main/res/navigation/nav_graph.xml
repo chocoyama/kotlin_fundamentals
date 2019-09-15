@@ -38,6 +38,9 @@
         android:name="fragment.detail.DetailFragment"
         android:label="fragment_detail"
         tools:layout="@layout/fragment_detail">
+        <argument
+            android:name="selectedProperty"
+            app:argType="fragment.network.MarsProperty"/>
     </fragment>
 
 </navigation>

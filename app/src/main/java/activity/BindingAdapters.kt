@@ -50,7 +50,8 @@ fun bindRecyclerView(recyclerView: RecyclerView, data: List<MarsProperty>?) {
 }
 
 @BindingAdapter("marsApiStatus")
-fun bindStatus(statusImageView: ImageView, status: OverviewViewModel.MarsApiStatus) {
+fun bindStatus(statusImageView: ImageView, status: OverviewViewModel.MarsApiStatus?) {
+    if (status == null) return
     when (status) {
         OverviewViewModel.MarsApiStatus.LOADING -> {
             statusImageView.visibility = View.VISIBLE
