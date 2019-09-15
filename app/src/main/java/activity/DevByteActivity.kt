@@ -1,5 +1,5 @@
 /*
- * Copyright 2019, The Android Open Source Project
+ * Copyright (C) 2019 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -12,7 +12,6 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *
  */
 
 package activity
@@ -21,14 +20,18 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.android.kotlin_fundamental.R
 
-class MainActivity : AppCompatActivity() {
+/**
+ * This is a single activity application that uses the Navigation library. Content is displayed
+ * by Fragments.
+ */
+class DevByteActivity : AppCompatActivity() {
 
     /**
-     * Our MainActivity is only responsible for setting the content view that contains the
-     * Navigation Host.
+     * Called when the activity is starting.  This is where most initialization
+     * should go
      */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_dev_byte_viewer)
     }
 }
